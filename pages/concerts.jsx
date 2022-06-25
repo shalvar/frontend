@@ -6,13 +6,15 @@ export default function concerts() {
   const [films, setConcerts] = useState([
     {
       title: "Баста",
-      description: "Ледовый дворец ",
-      photoUrl: "",
+      photoUrl: "img/basta.jpg",
     },
     {
       title: "Тимати",
-      description: "Олимпийский",
-      photoUrl: "",
+      photoUrl: "img/timati.jpg",
+    },
+    {
+      title: "JONY",
+      photoUrl: "img/jony.jpg",
     },
   ]);
 
@@ -24,14 +26,11 @@ export default function concerts() {
           return (
             <div className={styles.poster}>
               <div className={styles.poster__img}>
-                <a href={item.url}>
-                  <img className={styles.img} src={item.photoUrl} alt="" />
-                </a>
+                <img className={styles.img} src={item.photoUrl} alt="" />
               </div>
+
               <div className={styles.poster__info}>
                 <h1 className={styles.poster__infoText}>{item.title}</h1>
-
-                <p className={styles.p}>{item.description}</p>
               </div>
             </div>
           );

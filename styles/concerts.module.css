@@ -1,0 +1,36 @@
+.img {
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  min-height: 400px;
+  min-width: 280px;
+  height: 40%;
+  width: 30%;
+}
+.poster__img {
+  min-height: 400px;
+  min-width: 280px;
+  height: 40%;
+  margin-top: 0;
+}
+.container {
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+}
+.poster {
+  position: relative;
+  text-align: center;
+}
+.poster__infoText {
+  width: 0;
+  overflow: hidden;
+  color: white;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.poster:hover .poster__infoText {
+  width: auto;
+}
