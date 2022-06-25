@@ -5,18 +5,17 @@ import Header from "../components/header";
 export default function Home() {
   const [films, setFilms] = useState([
     {
-      title: "Молодой человек",
+      title: "Афиша фильмов",
       description:
-        " Ваня Ревзин к своим тридцати годам, несмотря на золотую медаль в школе и красный диплом МГУ, оказался на дне: жена ушла к КМС по боксу, с убогой работы в банке уволили, а до закрытия ипотеки за маленькую студию в человейнике — годы боли и страданий. В момент отчаяния Ива  узнает, что его ушлый одноклассник-двоечник Коля стал преуспевающим бизнесменом и объявил конкурс для старшеклассников с многомиллионным призовым фондом.",
-      timetable: ["12:20", "14:45", "18:30"],
-      photoUrl: "img/film1.jpg",
+        " Здесь вы можете найти расписание сеансов всех актуальных фильмов",
+      photoUrl: "img/fFilm.jpg",
+      url: " /films",
     },
     {
-      title: "Последний богатырь корень зла",
-      description:
-        "  Во второй части зрители узнают об истоках древнего зла, с которым  героям пришлось столкнуться в первом фильме, увидят новые уголки сказочного Белогорья, и станут свидетелями захватывающих схваток с участием былинных богатырей.",
-      timetable: ["12:20", "14:45", "18:30"],
-      photoUrl: "img/film2.jpg",
+      title: "Афиша концертов",
+      description: "Любая музыка на любой вкус",
+      photoUrl: "img/fConcert.jpg",
+      url: "/concerts",
     },
   ]);
   return (
@@ -26,21 +25,12 @@ export default function Home() {
         {films.map((item, index) => {
           return (
             <div className={styles.poster}>
-              <div className={styles.poster__img}>
+              <a className={styles.poster__img} href={item.url}>
                 <img className={styles.img} src={item.photoUrl} alt="" />
-              </div>
-              <div classNAme={styles.poster__info}>
+              </a>
+              <div className={styles.poster__info}>
                 <h1 className={styles.poster__infoText}>{item.title}</h1>
                 <p className={styles.p}>{item.description}</p>
-                <div className={styles.timetable}>
-                  {item.timetable.map((time, index) => {
-                    return (
-                      <button className={styles.timetable__button}>
-                        {time}
-                      </button>
-                    );
-                  })}
-                </div>
               </div>
             </div>
           );

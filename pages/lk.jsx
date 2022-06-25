@@ -1,5 +1,5 @@
-import Header from "../../components/header";
-import styles from "../../styles/lk.module.css";
+import Header from "../components/header";
+import styles from "../styles/lk.module.css";
 
 export default function lk() {
   return (
