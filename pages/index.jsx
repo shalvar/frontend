@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
+import Header from "../components/header";
 
 export default function Home() {
   const [films, setFilms] = useState([
@@ -19,27 +20,32 @@ export default function Home() {
     },
   ]);
   return (
-    <div className={styles.container}>
-      {films.map((item, index) => {
-        return (
-          <div className={styles.poster}>
-            <div className={styles.poster__img}>
-              <img className={styles.img} src={item.photoUrl} alt="" />
-            </div>
-            <div classNAme={styles.poster__info}>
-              <h1 className={styles.poster__infoText}>{item.title}</h1>
-              <p className={styles.p}>{item.description}</p>
-              <div className={styles.timetable}>
-                {item.timetable.map((time, index) => {
-                  return (
-                    <button className={styles.timetable__button}>{time}</button>
-                  );
-                })}
+    <>
+      <Header title="Афиша сеансов" />
+      <div className={styles.container}>
+        {films.map((item, index) => {
+          return (
+            <div className={styles.poster}>
+              <div className={styles.poster__img}>
+                <img className={styles.img} src={item.photoUrl} alt="" />
+              </div>
+              <div classNAme={styles.poster__info}>
+                <h1 className={styles.poster__infoText}>{item.title}</h1>
+                <p className={styles.p}>{item.description}</p>
+                <div className={styles.timetable}>
+                  {item.timetable.map((time, index) => {
+                    return (
+                      <button className={styles.timetable__button}>
+                        {time}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 }

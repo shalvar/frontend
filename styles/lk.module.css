@@ -1,0 +1,36 @@
+.form__login {
+  border-radius: 1em;
+  height: 4em;
+  width: 40em;
+}
+.form__login:hover {
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.form__password {
+  border-radius: 1em;
+  margin-top: 10px;
+  height: 4em;
+  width: 40em;
+}
+.form__password:hover {
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
+}
+.form {
+  text-align: center;
+  justify-content: center;
+  margin-top: 7em;
+}
+.form__sumbit {
+  background-image: linear-gradient(to right, #fc354c, #0abfbc);
+  border-radius: 1em;
+  margin-top: 10px;
+  height: 4em;
+  width: 20em;
+}
+.form__sumbit:hover {
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
+}
+.form__sumbit:active {
+  box-shadow: none;
+}

@@ -1,6 +1,6 @@
 import styles from "../styles/Header.module.css";
 
-export default function Hedaer() {
+export default function Hedaer({ title }) {
   return (
     <hedaer>
       <div className={styles.menu}>
@@ -18,10 +18,12 @@ export default function Hedaer() {
           </svg>
           <h1 className={styles.logo__text}>АФИША</h1>
         </div>
-        <a href="">Войти в личный кабинет</a>
+        <a className={styles.account} href="">
+          <span className={styles.account__button}>Войти в кабинет</span>
+        </a>
       </div>
       <div className={styles.banner}>
-        <h1 className={styles.banner__text}>{props.name}</h1>
+        <h1 className={styles.banner__text}>{title}</h1>
       </div>
     </hedaer>
   );
