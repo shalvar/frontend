@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 
 export default function Home() {
-  const [films, setFilms] = useState([
+  const [main, setMain] = useState([
     {
       title: "Афиша фильмов",
       description:
@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <Header title="Афиша сеансов" />
       <div className={styles.container}>
-        {films.map((item, index) => {
+        {main.map((item, index) => {
           return (
             <div className={styles.poster}>
               <a className={styles.poster__img} href={item.url}>

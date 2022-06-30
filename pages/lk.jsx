@@ -3,7 +3,7 @@ import styles from "../styles/lk.module.css";
 
 export default function lk() {
   return (
-    <div className={styles.bg}>
+    <div>
       <Header title="Личный кабинет" />
 
       <form className={styles.form} method="POST">
@@ -28,6 +28,11 @@ export default function lk() {
             className={styles.form__password}
             required
           />
+          <div className={styles.registration}>
+            <a className={styles.registration__link} href="/reg">
+              Регистрация
+            </a>
+          </div>
         </div>
         <button className={styles.form__sumbit} type="submit">
           <span className={styles.form__text}>Войти</span>
