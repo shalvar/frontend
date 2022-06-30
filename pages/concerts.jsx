@@ -1,9 +1,9 @@
-import { useState } from "react";
 import styles from "../styles/concerts.module.css";
+import { useState } from "react";
 import Header from "../components/header";
 
-export default function concerts() {
-  const [films, setConcerts] = useState([
+export default function concert() {
+  const [concerts, setConcerts] = useState([
     {
       title: "Баста",
       photoUrl: "img/basta.jpg",
@@ -20,18 +20,13 @@ export default function concerts() {
 
   return (
     <>
-      <Header title="Афиша концертов" />;
+      <Header title="Афиша концертов" />
       <div className={styles.container}>
-        {films.map((item, index) => {
+        {concerts.map((item, index) => {
           return (
-            <div className={styles.poster}>
-              <div className={styles.poster__img}>
-                <img className={styles.img} src={item.photoUrl} alt="" />
-              </div>
-
-              <div className={styles.poster__info}>
-                <h1 className={styles.poster__infoText}>{item.title}</h1>
-              </div>
+            <div className={styles.item}>
+              <img className={styles.img} src={item.photoUrl} />
+              <h1 className={styles.itemText}>{item.title}</h1>
             </div>
           );
         })}
