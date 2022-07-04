@@ -32,3 +32,29 @@
   transform: translate(-50%, -50%);
   position: absolute;
 }
+@media all and (max-width: 540px) {
+  .poster__infoText {
+    top: 5%;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .poster__infoText {
+    width: 280px;
+    top: 5%;
+  }
+  .p {
+    width: 280px;
+    bottom: -8%;
+  }
+}
+@media all and (max-width: 280px) {
+  .poster__infoText {
+    width: 26 0px;
+    top: 5%;
+  }
+  .img {
+    min-width: 260px;
+    min-height: 280px;
+  }
+}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
@@ -6,8 +7,7 @@ export default function Home() {
   const [main, setMain] = useState([
     {
       title: "Афиша фильмов",
-      description:
-        " Здесь вы можете найти расписание сеансов всех актуальных фильмов",
+      description: " Расписание сеансов всех актуальных фильмов",
       photoUrl: "img/fFilm.jpg",
       url: " /films",
     },
@@ -25,9 +25,11 @@ export default function Home() {
         {main.map((item, index) => {
           return (
             <div className={styles.poster}>
-              <a className={styles.poster__img} href={item.url}>
-                <img className={styles.img} src={item.photoUrl} alt="" />
-              </a>
+              <Link href={item.url}>
+                <a className={styles.poster__img}>
+                  <img className={styles.img} src={item.photoUrl} alt="" />
+                </a>
+              </Link>
               <div className={styles.poster__info}>
                 <h1 className={styles.poster__infoText}>{item.title}</h1>
                 <p className={styles.p}>{item.description}</p>

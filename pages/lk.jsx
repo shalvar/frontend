@@ -1,5 +1,6 @@
 import Header from "../components/header";
 import styles from "../styles/lk.module.css";
+import Link from "next/link";
 
 export default function lk() {
   return (
@@ -29,9 +30,9 @@ export default function lk() {
             required
           />
           <div className={styles.registration}>
-            <a className={styles.registration__link} href="/reg">
-              Регистрация
-            </a>
+            <Link href="/reg">
+              <a className={styles.registration__link}>Регистрация</a>
+            </Link>
           </div>
         </div>
         <button className={styles.form__sumbit} type="submit">

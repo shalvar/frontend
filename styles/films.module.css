@@ -1,19 +1,25 @@
 .container {
-  padding: 5cm;
+  margin-top: 5em;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 .poster {
   display: flex;
+  margin-bottom: 2em;
 }
 .img {
-  min-height: auto;
-  max-height: 418px;
-  min-width: auto;
-  max-width: 278px;
+  width: 60%;
+  height: 20%;
+  min-width: 280px;
+  min-height: 404px;
+  max-width: 280px;
 }
 .poster__infoText {
+  color: white;
   margin-top: 0;
 }
 .poster__info p {
+  color: white;
   font-weight: bold;
 }
 .poster__img {
@@ -35,4 +41,37 @@
 }
 .timetable__button:active {
   box-shadow: none;
+}
+@media all and (max-width: 280px) {
+  .poster {
+    flex-direction: column;
+  }
+  .poster__infoText {
+    font-weight: 600;
+  }
+  .img {
+    min-width: 184px;
+    min-height: 360px;
+  }
+}
+@media all and (max-width: 540px) {
+  .poster {
+    flex-direction: row;
+  }
+  .poster__infoText {
+    font-weight: 600;
+  }
+}
+
+@media all and (max-width: 666px) {
+  .poster {
+    flex-direction: column;
+  }
+  .timetable__button {
+    opacity: 0;
+  }
+  .p {
+    opacity: 0;
+    height: 0;
+  }
 }
