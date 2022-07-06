@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
+import Image from "next/image";
 
 export default function Home() {
   const [main, setMain] = useState([
@@ -24,10 +25,10 @@ export default function Home() {
       <div className={styles.container}>
         {main.map((item, index) => {
           return (
-            <div className={styles.poster}>
+            <div key={index} className={styles.poster}>
               <Link href={item.url}>
                 <a className={styles.poster__img}>
-                  <img className={styles.img} src={item.photoUrl} alt="" />
+                  <Image className={styles.img} src={item.photoUrl} alt="" />
                 </a>
               </Link>
               <div className={styles.poster__info}>

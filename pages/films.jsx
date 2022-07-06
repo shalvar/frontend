@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "../styles/films.module.css";
 import Header from "../components/header";
+import Image from "next/image";
 
-export default function films() {
+export default function Films() {
   const [films, setFilms] = useState([
     {
       title: "Молодой человек",
@@ -25,9 +26,9 @@ export default function films() {
       <div className={styles.container}>
         {films.map((item, index) => {
           return (
-            <div className={styles.poster}>
+            <div key={index} className={styles.poster}>
               <div className={styles.poster__img}>
-                <img className={styles.img} src={item.photoUrl} alt="" />
+                <Image className={styles.img} src={item.photoUrl} alt="" />
               </div>
               <div className={styles.poster__info}>
                 <h1 className={styles.poster__infoText}>{item.title}</h1>
@@ -35,7 +36,7 @@ export default function films() {
                 <div className={styles.timetable}>
                   {item.timetable.map((time, index) => {
                     return (
-                      <button className={styles.timetable__button}>
+                      <button key={index} className={styles.timetable__button}>
                         {time}
                       </button>
                     );

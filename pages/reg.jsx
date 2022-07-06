@@ -9,7 +9,7 @@ export default function reg() {
       <form className={styles.form} method="POST">
         <h1>Регистрация</h1>
         <div className={styles.input__group}>
-          <label for="email"></label>
+          <label htmlFor="email"></label>
           <input
             placeholder="Почта"
             type="email"
@@ -19,7 +19,7 @@ export default function reg() {
           />
         </div>
         <div className={styles.input__group}>
-          <label for="first-name"></label>
+          <label htmlFor="first-name"></label>
           <input
             placeholder="Имя"
             type="text"
@@ -28,7 +28,7 @@ export default function reg() {
           />
         </div>
         <div className={styles.input__group}>
-          <label for="last-name"></label>
+          <label htmlFor="last-name"></label>
           <input
             placeholder="Фамилия"
             type="text"
@@ -38,7 +38,7 @@ export default function reg() {
         </div>
 
         <div className={styles.input__group}>
-          <label for="password"></label>
+          <label htmlFor="password"></label>
           <input
             placeholder="Пароль"
             type="text"

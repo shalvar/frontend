@@ -50,7 +50,7 @@
 }
 @media all and (max-width: 280px) {
   .poster__infoText {
-    width: 26 0px;
+    width: 260px;
     top: 5%;
   }
   .img {
