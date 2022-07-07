@@ -2,20 +2,19 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
-import Image from "next/image";
 
 export default function Home() {
   const [main, setMain] = useState([
     {
       title: "Афиша фильмов",
       description: " Расписание сеансов всех актуальных фильмов",
-      photoUrl: "img/fFilm.jpg",
+      photoUrl: "img/Film.jpg",
       url: " /films",
     },
     {
       title: "Афиша концертов",
       description: "Любая музыка на любой вкус",
-      photoUrl: "img/fConcert.jpg",
+      photoUrl: "img/Concert.jpg",
       url: "/concerts",
     },
   ]);
@@ -28,7 +27,7 @@ export default function Home() {
             <div key={index} className={styles.poster}>
               <Link href={item.url}>
                 <a className={styles.poster__img}>
-                  <Image className={styles.img} src={item.photoUrl} alt="" />
+                  <img className={styles.img} src={item.photoUrl} alt="" />
                 </a>
               </Link>
               <div className={styles.poster__info}>

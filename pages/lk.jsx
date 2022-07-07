@@ -7,7 +7,7 @@ export default function lk() {
     <div>
       <Header title="Личный кабинет" />
 
-      <htmlForm className={styles.htmlForm} method="POST">
+      <form className={styles.form} method="POST">
         <h1>Вход в личный кабинет</h1>
         <div className={styles.input__group}>
           <label htmlFor="login"></label>
@@ -16,7 +16,7 @@ export default function lk() {
             type="text"
             name="login"
             required
-            className={styles.htmlForm__login}
+            className={styles.form__login}
           />
         </div>
 
@@ -26,7 +26,7 @@ export default function lk() {
             placeholder="Пароль"
             type="text"
             name="password"
-            className={styles.htmlForm__password}
+            className={styles.form__password}
             required
           />
           <div className={styles.registration}>
@@ -35,10 +35,10 @@ export default function lk() {
             </Link>
           </div>
         </div>
-        <button className={styles.htmlForm__sumbit} type="submit">
-          <span className={styles.htmlForm__text}>Войти</span>
+        <button className={styles.form__sumbit} type="submit">
+          <span className={styles.form__text}>Войти</span>
         </button>
-      </htmlForm>
+      </form>
     </div>
   );
 }

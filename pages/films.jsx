@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/films.module.css";
 import Header from "../components/header";
-import Image from "next/image";
 
 export default function Films() {
   const [films, setFilms] = useState([
@@ -28,7 +27,7 @@ export default function Films() {
           return (
             <div key={index} className={styles.poster}>
               <div className={styles.poster__img}>
-                <Image className={styles.img} src={item.photoUrl} alt="" />
+                <img className={styles.img} src={item.photoUrl} alt="" />
               </div>
               <div className={styles.poster__info}>
                 <h1 className={styles.poster__infoText}>{item.title}</h1>

@@ -1,7 +1,6 @@
 import styles from "../styles/concerts.module.css";
 import { useState } from "react";
 import Header from "../components/header";
-import Image from "next/image";
 
 export default function Concert() {
   const [concerts, setConcerts] = useState([
@@ -26,7 +25,7 @@ export default function Concert() {
         {concerts.map((item, index) => {
           return (
             <div key={index} className={styles.item}>
-              <Image className={styles.img} src={item.photoUrl} />
+              <img className={styles.img} src={item.photoUrl} />
               <h1 className={styles.itemText}>{item.title}</h1>
             </div>
           );
