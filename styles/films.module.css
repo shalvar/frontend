@@ -1,0 +1,79 @@
+.container {
+  margin-top: 5em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.poster {
+  display: flex;
+  margin-bottom: 2em;
+}
+.img {
+  width: 60%;
+  height: 20%;
+  min-width: 280px;
+  min-height: 404px;
+  max-width: 280px;
+}
+.poster__infoText {
+  color: white;
+  margin-top: 0;
+}
+.poster__info p {
+  color: white;
+  font-weight: bold;
+}
+.poster__img {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+.timetable__button {
+  border-radius: 0.5em;
+  border-style: none;
+  background-image: linear-gradient(to right, #56ab2f, #a8e063);
+  height: 2.5em;
+  width: 4.5em;
+  font-size: large;
+  margin: 10px;
+}
+.timetable__button:hover {
+  background-image: linear-gradient(to right, #c31432, #240b36);
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
+}
+.timetable__button:active {
+  box-shadow: none;
+}
+@media all and (max-width: 280px) {
+  .poster {
+    flex-direction: column;
+  }
+  .poster__infoText {
+    font-weight: 600;
+  }
+  .img {
+    min-width: 184px;
+    min-height: 360px;
+  }
+}
+@media all and (max-width: 540px) {
+  .poster {
+    flex-direction: row;
+  }
+  .poster__infoText {
+    font-weight: 600;
+  }
+}
+
+@media all and (max-width: 666px) {
+  .poster {
+    flex-direction: column;
+  }
+  .timetable__button {
+    opacity: 0;
+  }
+  .p {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@media print
