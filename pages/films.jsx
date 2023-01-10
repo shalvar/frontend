@@ -16,7 +16,8 @@ useEffect(() => {
 
   const [film, setFilm] = useState([]);
   const getFilm = () => {
-    axios.get("http://localhost:8001/films").then((response) => {
+    axios.get("http://localhost:8001/films")
+    .then((response) => {
       setFilm(response.data);
     });
   };

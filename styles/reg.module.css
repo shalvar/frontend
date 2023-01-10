@@ -42,7 +42,7 @@
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
 }
 .form {
-  color: azure;
+  color: black;
   text-align: center;
   justify-content: center;
   margin-top: 7em;
@@ -51,7 +51,8 @@
   font-weight: bold;
 }
 .form__sumbit {
-  background: linear-gradient(to right, #7303c0, #ec38bc, #fdeff9);
+    margin-bottom: 15em;
+  background: rgb(255, 137, 2);
   border-radius: 1em;
   margin-top: 10px;
   height: 4em;

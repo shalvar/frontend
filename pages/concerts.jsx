@@ -1,16 +1,20 @@
 import styles from "../styles/concerts.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/header";
 import axios from "axios";
 import Link from "next/link";
 
 export default function Concert() {
-  const [concert, setConcert] = useState([
+  const [concert, setConcert] = useState([])
+  const getConcert = () => {
     axios.get("http://localhost:8001/concerts")
     .then((response) => {
       setConcert(response.data);
-    }),
-  ]);
+    });
+  };
+  useEffect(() => {
+    getConcert();
+  }, []);
   return (
     <>
       <Header title="Афиша концертов" />

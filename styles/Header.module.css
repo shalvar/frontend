@@ -1,6 +1,8 @@
 .menu {
-  background-color: #983141;
+background: rgb(23, 23, 23);
   width: 100%;
+  padding-right: 1em;
+  padding-left: 1em;
   display: flex;
   height: 120px;
   align-items: center;
@@ -13,6 +15,7 @@
 }
 .logo {
   display: flex;
+
 }
 .logo__text {
   color: white;
@@ -28,7 +31,7 @@
 }
 
 .account {
-  background: linear-gradient(to right, #7303c0, #ec38bc, #fdeff9);
+  background: rgb(255, 137, 2);
   padding: 1em;
   margin: auto 0;
   border: 1px solid black;
