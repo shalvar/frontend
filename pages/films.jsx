@@ -1,20 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/films.module.css";
 import Header from "../components/header";
 import axios from "axios";
 import Link from "next/link";
 
 export default function Films() {
-  const [film, setFilm] = useState([
-    axios.get("http://localhost:8001/films").then((response) => {
-      setFilm(response.data);
-    }),
-  ]);
+
+
+  const [film, setFilm] = useState([])
+  const getFilm = () => {
+    axios.get("http://localhost:8001/films")
+    .then((response) => {
+      setFilm(response.data)
+    })
+  }
+     useEffect(() => {
+       getFilm()
+  },
+  []) 
+    
+
+  const [value, setValue] = useState("")
+
+  const filteredFilm = film.filter((item) => {
+    return item.title.toLowerCase().includes(value.toLowerCase());
+  })
+
+    
   return (
     <>
       <Header title="Афиша сеансов" />
       <div className={styles.container}>
-        {film.map((item, index) => {
+        <div className={styles.search}>
+          <form className={styles.search__form}>
+            <input
+              type="text"
+              placeholder="Поиск по названию"
+              className={styles.search__input}
+              onChange={(event) => setValue(event.target.value)}
+            />
+          </form>
+        </div>
+        {filteredFilm.map((item, index) => {
           return (
             <div key={index} className={styles.poster}>
               <div className={styles.poster__img}>

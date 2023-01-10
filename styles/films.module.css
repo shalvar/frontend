@@ -9,10 +9,15 @@
 }
 .img {
   width: 60%;
-  height: 20%;
+  height: 100%;
   min-width: 280px;
   min-height: 404px;
   max-width: 280px;
+}
+.poster__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .poster__infoText {
   color: white;
@@ -23,7 +28,6 @@
   font-weight: bold;
 }
 .poster__img {
-  margin-bottom: 1em;
   margin-right: 1em;
 }
 .call__button {

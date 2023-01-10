@@ -6,17 +6,17 @@ import Link from "next/link";
 import { Main } from "next/document";
 
 export default function Concert() {
-  const [oncert, setConcert] = useState([
+  const [concert, setConcert] = useState([
     axios.get("http://localhost:8001/concerts")
     .then((response) => {
-     setConcert(response.data);
+      setConcert(response.data);
     }),
   ]);
   return (
     <>
       <Header title="Афиша концертов" />
       <div className={styles.container}>
-        {Concert.map((item, index) => {
+        {concert.map((item, index) => {
           return (
             <div ket={item} className={styles.item}>
               <img className={styles.img} src={item.photoUrl} />
