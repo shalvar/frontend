@@ -50,5 +50,14 @@
       "id": "3",
       "photoUrl": "img/jony.jpg"
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email":"samvelhakobyan03@mail.ru",
+      "name": "Александр",
+      "surname": "Петров",
+      "password":"qwert123"
+}
   ]
 }
