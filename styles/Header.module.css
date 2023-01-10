@@ -11,6 +11,7 @@
   display: flex;
 }
 .logo__text {
+  color: white;
   display: block;
   margin: auto 0;
 }
@@ -24,7 +25,8 @@
 }
 
 .account {
-  background-color: white;
+  background: linear-gradient(to right, #7303c0, #ec38bc, #fdeff9);
+
   padding: 1em;
   margin: auto 0;
   margin-left: auto;

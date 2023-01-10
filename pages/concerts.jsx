@@ -1,32 +1,34 @@
 import styles from "../styles/concerts.module.css";
 import { useState } from "react";
 import Header from "../components/header";
+import axios from "axios";
+import Link from "next/link";
+import { Main } from "next/document";
 
 export default function Concert() {
-  const [concerts, setConcerts] = useState([
-    {
-      title: "Баста",
-      photoUrl: "img/basta.jpg",
-    },
-    {
-      title: "Тимати",
-      photoUrl: "img/timati.jpg",
-    },
-    {
-      title: "JONY",
-      photoUrl: "img/jony.jpg",
-    },
+  const [oncert, setConcert] = useState([
+    axios.get("http://localhost:8001/concerts")
+    .then((response) => {
+     setConcert(response.data);
+    }),
   ]);
-
   return (
     <>
       <Header title="Афиша концертов" />
       <div className={styles.container}>
-        {concerts.map((item, index) => {
+        {Concert.map((item, index) => {
           return (
-            <div key={index} className={styles.item}>
+            <div ket={item} className={styles.item}>
               <img className={styles.img} src={item.photoUrl} />
-              <h1 className={styles.itemText}>{item.title}</h1>
+              <Link href="/lk">
+                <a className={styles.account}>
+                  <span>
+                    <button className={styles.item__button}>
+                      Войдите, чтобы купить билеты
+                    </button>
+                  </span>
+                </a>
+              </Link>
             </div>
           );
         })}

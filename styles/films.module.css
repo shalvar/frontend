@@ -26,21 +26,24 @@
   margin-bottom: 1em;
   margin-right: 1em;
 }
-.timetable__button {
-  border-radius: 0.5em;
-  border-style: none;
-  background-image: linear-gradient(to right, #56ab2f, #a8e063);
-  height: 2.5em;
-  width: 4.5em;
-  font-size: large;
-  margin: 10px;
+.call__button {
+  background: linear-gradient(to right, #7303c0, #ec38bc, #fdeff9);
+  padding: 1em;
+  margin-bottom: 0;
+  margin-left: auto;
+  border: 1px solid black;
+  border-radius: 1em;
 }
-.timetable__button:hover {
-  background-image: linear-gradient(to right, #c31432, #240b36);
+.call__button:hover {
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
 }
-.timetable__button:active {
+.call__button:active {
   box-shadow: none;
+}
+@media all and (max-width: 768px) {
+  .call__button {
+    margin-top: 8em;
+  }
 }
 @media all and (max-width: 280px) {
   .poster {
@@ -48,6 +51,9 @@
   }
   .poster__infoText {
     font-weight: 600;
+  }
+  .call__button {
+    margin-top: 0;
   }
   .img {
     min-width: 184px;
@@ -58,6 +64,9 @@
   .poster {
     flex-direction: row;
   }
+  .call__button {
+    margin-top: 0;
+  }
   .poster__infoText {
     font-weight: 600;
   }
@@ -67,13 +76,12 @@
   .poster {
     flex-direction: column;
   }
-  .timetable__button {
-    opacity: 0;
+  .call__button {
+    margin-top: 0;
   }
+
   .p {
     opacity: 0;
     height: 0;
   }
 }
-
-@media print

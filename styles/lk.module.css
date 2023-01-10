@@ -24,7 +24,7 @@
   margin-top: 7em;
 }
 .form__sumbit {
-  background-image: linear-gradient(to right, #fc354c, #0abfbc);
+  background: linear-gradient(to right, #7303c0, #ec38bc, #fdeff9);
   border-radius: 1em;
   margin-top: 10px;
   height: 4em;
