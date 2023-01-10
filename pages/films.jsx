@@ -4,32 +4,35 @@ import Header from "../components/header";
 import axios from "axios";
 import Link from "next/link";
 
+
 export default function Films() {
 
+const [time, setTime] = useState(new Date().toLocaleTimeString());
+useEffect(() => {
+  const timer = setInterval(() => {
+    setTime(new Date().toLocaleTimeString());
+  }, 1000);
+}, []);
 
-  const [film, setFilm] = useState([])
+  const [film, setFilm] = useState([]);
   const getFilm = () => {
-    axios.get("http://localhost:8001/films")
-    .then((response) => {
-      setFilm(response.data)
-    })
-  }
-     useEffect(() => {
-       getFilm()
-  },
-  []) 
-    
+    axios.get("http://localhost:8001/films").then((response) => {
+      setFilm(response.data);
+    });
+  };
+  useEffect(() => {
+    getFilm();
+  }, []);
 
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState("");
 
   const filteredFilm = film.filter((item) => {
     return item.title.toLowerCase().includes(value.toLowerCase());
-  })
+  });
 
-    
   return (
     <>
-      <Header title="Афиша сеансов" />
+      <Header title="Афиша фильмов" />
       <div className={styles.container}>
         <div className={styles.search}>
           <form className={styles.search__form}>
@@ -55,7 +58,7 @@ export default function Films() {
                     <span>
                       <button className={styles.call__button}>
                         Войдите,чтобы купить билеты на <br />
-                        {item.timetable}
+                        {time}
                       </button>
                     </span>
                   </a>

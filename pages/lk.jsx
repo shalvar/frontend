@@ -7,35 +7,13 @@ import { useContext } from "react";
 import { UserContext } from "./_app";
 
 export default function Lk() {
-  const userContext = useContext(UserContext);
-  const [error, setError] = useState(null);
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const values = {
-      email: event.target[0].value,
-      password: event.target[1].value,
-    };
-    await request("/auth/login/", "POST", values)
-      .then((res) => {
-        setError(null);
-        localStorage.setItem("access", res.access);
-        userContext.updateUser();
-      })
-      .catch((err) => {
-        console.log(err);
-        setError(
-          err.status === 401 ? "Неправильный логин или пароль" : err.message
-        );
-      });
-  };
-
+  
   return (
     <div>
       <Header title="Личный кабинет" />
 
       <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
         <h1>Вход в личный кабинет</h1>
-        {error && <p className={styles.error}>{error}</p>}
         <div className={styles.input__group}>
           <label htmlFor="login"></label>
           <input

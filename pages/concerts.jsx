@@ -3,7 +3,6 @@ import { useState } from "react";
 import Header from "../components/header";
 import axios from "axios";
 import Link from "next/link";
-import { Main } from "next/document";
 
 export default function Concert() {
   const [concert, setConcert] = useState([
@@ -18,7 +17,7 @@ export default function Concert() {
       <div className={styles.container}>
         {concert.map((item, index) => {
           return (
-            <div ket={item} className={styles.item}>
+            <div key={item} className={styles.item}>
               <img className={styles.img} src={item.photoUrl} />
               <Link href="/lk">
                 <a className={styles.account}>

@@ -1,7 +1,22 @@
 .container {
-  margin-top: 5em;
+  margin-top: 2em;
   margin-left: 3em;
   margin-right: 3em;
+}
+.search{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+.search__form{
+  width: 30%;
+}
+.search__input {
+  border-radius: 1em;
+  height: 3em;
+  width: 100%;
+
+
 }
 .poster {
   display: flex;

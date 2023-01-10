@@ -28,6 +28,9 @@ export default function Header({ title }) {
             </a>
           </Link>
         </div>
+        <div className={styles.banner}>
+          <h1 className={styles.banner__text}>{title}</h1>
+        </div>
         <Link href="/lk">
           {userContext?.user ? (
             <span className={styles.account__button}>
@@ -39,9 +42,6 @@ export default function Header({ title }) {
             </a>
           )}
         </Link>
-      </div>
-      <div className={styles.banner}>
-        <h1 className={styles.banner__text}>{title}</h1>
       </div>
     </header>
   );

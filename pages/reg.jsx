@@ -2,9 +2,9 @@ import Header from "../components/header";
 import styles from "../styles/reg.module.css";
 import request from "../lib/request";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Reg() {
-  const [error, setError] = useState(null);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const values = {
@@ -13,14 +13,11 @@ export default function Reg() {
       first_name: event.target["first-name"].value,
       last_name: event.target["last-name"].value,
     };
-    await request("/auth/register/", "POST", values)
+    axios.post("http://localhost:8001/users",values)
       .then((res) => {
-        setError(null);
         alert("Вы успешно зарегистрировались. Теперь вы можете войти.");
       })
-      .catch((err) => {
-        setError(Object.values(err.response.data)[0][0]);
-      });
+  
   };
 
   return (
@@ -29,7 +26,6 @@ export default function Reg() {
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1>Регистрация</h1>
-        {error && <p className={styles.error}>{error}</p>}
         <div className={styles.input__group}>
           <label htmlFor="email"></label>
           <input
