@@ -1,13 +1,23 @@
 .container {
+
   margin-top: 2em;
   margin-left: 3em;
   margin-right: 3em;
 }
+.filter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
 .search{
   display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 2em;
 }
+
 .search__form{
   margin-right: 3em;
   width: 30%;
@@ -31,6 +41,7 @@
   max-width: 280px;
 }
 .poster__info {
+  width: 45em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +57,12 @@
 .poster__img {
   margin-right: 1em;
 }
-.call__button {
+.genre {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.buy__button {
   background: rgb(255, 137, 2);
   padding: 1em;
   margin-bottom: 0;
@@ -54,14 +70,23 @@
   border: 1px solid black;
   border-radius: 1em;
 }
-.call__button:hover {
+.buy__button:hover {
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
 }
-.call__button:active {
+.buy__button:active {
   box-shadow: none;
 }
+.comment__button{
+  background: rgb(255, 137, 2);
+  padding: 1em;
+  margin-bottom: 0;
+  height: 4em;
+  margin-left: 30px;
+  border: 1px solid black;
+  border-radius: 1em;
+}
 @media all and (max-width: 768px) {
-  .call__button {
+  .buy__button {
     margin-top: 8em;
   }
 }
@@ -72,7 +97,7 @@
   .poster__infoText {
     font-weight: 600;
   }
-  .call__button {
+  .buy__button {
     margin-top: 0;
   }
   .img {
@@ -84,7 +109,7 @@
   .poster {
     flex-direction: row;
   }
-  .call__button {
+  .buy__button {
     margin-top: 0;
   }
   .poster__infoText {
@@ -96,7 +121,7 @@
   .poster {
     flex-direction: column;
   }
-  .call__button {
+  .buy__button {
     margin-top: 0;
   }
 

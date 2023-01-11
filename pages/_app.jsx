@@ -8,29 +8,10 @@ import { useEffect, useState } from "react";
 export const UserContext = createContext();
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = useState(null);
-
-  const updateUser = (user) => {
-    localStorage.getItem("access") &&
-      request("/auth/me/", "GET")
-        .then((res) => {
-          console.log(res);
-          setUser(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  };
-
-  useEffect(() => {
-    updateUser();
-  }, []);
-
+ 
   return (
     <>
-      <UserContext.Provider value={{ user, updateUser }}>
         <Component {...pageProps} />
-      </UserContext.Provider>
     </>
   );
 }

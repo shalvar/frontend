@@ -5,22 +5,17 @@ import axios from "axios";
 import Link from "next/link";
 import Filter from "../components/filter";
 
-
-
 export default function Films() {
-
-
-const [time, setTime] = useState(new Date().toLocaleTimeString());
-useEffect(() => {
-  const timer = setInterval(() => {
-    setTime(new Date().toLocaleTimeString());
-  }, 1000);
-}, []);
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+  }, []);
 
   const [film, setFilm] = useState([]);
   const getFilm = () => {
-    axios.get("http://localhost:8001/films")
-    .then((response) => {
+    axios.get("http://localhost:8001/children's").then((response) => {
       setFilm(response.data);
     });
   };
@@ -32,24 +27,23 @@ useEffect(() => {
 
   const filteredFilm = film.filter((item) => {
     return item.title.toLowerCase().includes(value.toLowerCase());
-    
   });
 
   return (
     <>
       <Header title="Афиша фильмов" />
       <div className={styles.container}>
-          <div className={styles.search}>
-            <form className={styles.search__form}>
-              <input
-                type="text"
-                placeholder="Поиск по названию"
-                className={styles.search__input}
-                onChange={(event) => setValue(event.target.value)}
-              />
-            </form>
-            <Filter className={styles.filter} />
-          </div>
+        <div className={styles.search}>
+          <form className={styles.search__form}>
+            <input
+              type="text"
+              placeholder="Поиск по названию"
+              className={styles.search__input}
+              onChange={(event) => setValue(event.target.value)}
+            />
+          </form>
+          <Filter />
+        </div>
 
         {filteredFilm.map((item, index) => {
           return (
@@ -65,12 +59,9 @@ useEffect(() => {
                 <Link href="/lk">
                   <a className={styles.account}>
                     <span>
-                      <button className={styles.buy__button}>
-                        Купить билеты на <br />
+                      <button className={styles.call__button}>
+                        Войдите,чтобы купить билеты на <br />
                         {time}
-                      </button>
-                      <button className={styles.comment__button}>
-                      Оставить отзыв
                       </button>
                     </span>
                   </a>
