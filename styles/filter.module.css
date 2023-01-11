@@ -1,8 +1,7 @@
 .filter__button{
     background:white;
- margin-right: 40px;
+    margin-left: 30px;
     height: 20px;
-
     border: 1px solid black;
     border-radius: 5px;
 }

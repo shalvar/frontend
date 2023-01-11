@@ -12,6 +12,7 @@ background: rgb(23, 23, 23);
 .banner__text {
   text-align: center;
   margin: 0;
+  margin-right: 2em;
 }
 .logo {
   display: flex;
