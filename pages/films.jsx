@@ -62,19 +62,21 @@ useEffect(() => {
                 <p className={styles.p}>{item.description}</p>
                 <h3 className={styles.genre}>Жанр: {item.genre}</h3>
                 <h3 className={styles.date}>Дата выхода: {item.date}</h3>
-                <Link href="/lk">
-                  <a className={styles.account}>
+                <div className={styles.account}>
+                  <a href="/lk">
                     <span>
                       <button className={styles.buy__button}>
-                        Купить билеты на <br />
-                        {time}
-                      </button>
-                      <button className={styles.comment__button}>
-                      Оставить отзыв
+                        Купить билеты на <br /> {time}
                       </button>
                     </span>
                   </a>
-                </Link>
+                  <button className={styles.comment__button}>
+                    <a href="/comment">
+                      Оставить отзыв
+                      <br />о фильме
+                    </a>
+                  </button>
+                </div>
               </div>
             </div>
           );

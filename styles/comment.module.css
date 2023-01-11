@@ -1,0 +1,8 @@
+.comments__item{
+   display: flex;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid black;
+}
+.comments__info{
+  width: 50%;
+}
