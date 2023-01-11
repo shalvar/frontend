@@ -1,8 +1,35 @@
-.comments__item{
-   display: flex;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid black;
+.comments__item {
+  display: flex;
+  border: 2px solid black;
+  margin: auto;
 }
-.comments__info{
-  width: 50%;
+.comments__form {
+  margin-right: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.comments__input {
+  border-radius: 1em;
+  margin-top: 10px;
+  height: 3em;
+  width: 30%;
+  max-width: 50em;
+  min-width: 20em;
+}
+.comments__button {
+  margin-bottom: 1em;
+  background: rgb(255, 137, 2);
+  border-radius: 1em;
+  margin-top: 10px;
+  height: 4em;
+  width: 10em;
+}
+.comments__button:hover {
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3);
+}
+.comments__button:active {
+  box-shadow: none;
 }

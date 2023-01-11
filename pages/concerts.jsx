@@ -2,13 +2,16 @@ import styles from "../styles/concerts.module.css";
 import { useEffect, useState } from "react";
 import Header from "../components/header";
 import axios from "axios";
-import Link from "next/link";
+import Button from "@mui/material/Button";
+import { orange, grey } from "@mui/material/colors";
 
 export default function Concert() {
-  const [concert, setConcert] = useState([])
+  const primary = grey[900];
+  const secondary = orange[600];
+
+  const [concert, setConcert] = useState([]);
   const getConcert = () => {
-    axios.get("http://localhost:8001/concerts")
-    .then((response) => {
+    axios.get("http://localhost:8001/concerts").then((response) => {
       setConcert(response.data);
     });
   };
@@ -23,15 +26,19 @@ export default function Concert() {
           return (
             <div key={item} className={styles.item}>
               <img className={styles.img} src={item.photoUrl} />
-              <Link href="/lk">
-                <a className={styles.account}>
-                  <span>
-                    <button className={styles.item__button}>
-                      Войдите, чтобы купить билеты
-                    </button>
-                  </span>
-                </a>
-              </Link>
+              <Button
+                className={styles.item__button}
+                sx={{
+                  color: primary,
+                  backgroundColor: secondary,
+                  marginTop: 3,
+                  borderRadius: 3,
+                }}
+                variant="contained"
+                size="small"
+              >
+                <a href="/lk">Купить билеты </a>
+              </Button>
             </div>
           );
         })}

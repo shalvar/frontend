@@ -1,13 +1,13 @@
 import Header from "../components/header";
 import styles from "../styles/lk.module.css";
 import Link from "next/link";
-import request from "../lib/request.js";
-import { useState } from "react";
-import { useContext } from "react";
-import { UserContext } from "./_app";
+import Button from "@mui/material/Button";
+import { orange, grey } from "@mui/material/colors";
+
 
 export default function Lk() {
-  
+   const primary = grey[900];
+   const secondary = orange[600];
   return (
     <div>
       <Header title="Личный кабинет" />
@@ -41,9 +41,20 @@ export default function Lk() {
             </Link>
           </div>
         </div>
-        <button className={styles.form__sumbit} type="submit">
+        <Button
+          sx={{
+            color: primary,
+            backgroundColor: secondary,
+            marginTop: 1,
+            borderRadius: 3,
+          }}
+          variant="contained"
+          size="small"
+          className={styles.form__sumbit}
+          type="submit"
+        >
           <span className={styles.form__text}>Войти</span>
-        </button>
+        </Button>
       </form>
     </div>
   );

@@ -19,9 +19,9 @@ export default function Comment() {
   }, []);
 
   return (
+    <>
+     <Header title="Отзывы" />
     <div className={styles.container}>
-      <div className={styles.comments}>
-        <Header title="Отзывы" />
           <div className={styles.comments__form}>
                 <h2 className={styles.comments__title}>Оставить отзыв</h2>
                 <input
@@ -34,20 +34,21 @@ export default function Comment() {
                   placeholder="Ваш отзыв"
                   className={styles.comments__input}
                 />
-                <button onClick={click}>Оставить отзыв</button>
+                <button className={styles.comments__button} onClick={click}>Оставить отзыв</button>
               </div>
-            </div>
-        {comment.map((item, index) => {
+           
+        {comment.map((item, index) => { 
           return (
             <div key={index} className={styles.comments__item}>
               <div className={styles.comments__info}>
-                <h2 className={styles.comments__name}>{item.name}</h2>
-                <p className={styles.comments__text}>{item.text}</p>
+                <h2 >{item.name}</h2>
+                <p >{item.text}</p>
               </div>
       </div>
   );
 }
 )}
 </div>
+</>
 );
 }

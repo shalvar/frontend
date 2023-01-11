@@ -1,10 +1,13 @@
 import Header from "../components/header";
 import styles from "../styles/reg.module.css";
 import request from "../lib/request";
-import { useState } from "react";
 import axios from "axios";
+import Button from "@mui/material/Button";
+import { orange, grey } from "@mui/material/colors";
 
 export default function Reg() {
+   const primary = grey[900];
+   const secondary = orange[600];
   const handleSubmit = async (event) => {
     event.preventDefault();
     const values = {
@@ -65,9 +68,20 @@ export default function Reg() {
             required
           />
         </div>
-        <button className={styles.form__sumbit} type="submit">
+        <Button
+          sx={{
+            color: primary,
+            backgroundColor: secondary,
+            marginTop: 3,
+            borderRadius: 3,
+          }}
+          variant="contained"
+          size="small"
+           className={styles.form__sumbit}
+          type="submit"
+        >
           <span className={styles.form__text}>Зарегистрироваться</span>
-        </button>
+        </Button>
       </form>
     </div>
   );

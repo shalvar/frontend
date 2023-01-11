@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import styles from "../styles/films.module.css";
 import Header from "../components/header";
 import axios from "axios";
-import Link from "next/link";
 import Filter from "../components/filter";
-
+import Button from "@mui/material/Button";
+import { orange, grey } from "@mui/material/colors";
 
 export default function Films() {
+  const primary = grey[900];
+  const secondary = orange[600];
+
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -43,7 +46,7 @@ export default function Films() {
               onChange={(event) => setValue(event.target.value)}
             />
           </form>
-          <Filter />
+          <Filter className={styles.filter} />
         </div>
 
         {filteredFilm.map((item, index) => {
@@ -57,16 +60,41 @@ export default function Films() {
                 <p className={styles.p}>{item.description}</p>
                 <h3 className={styles.genre}>Жанр: {item.genre}</h3>
                 <h3 className={styles.date}>Дата выхода: {item.date}</h3>
-                <Link href="/lk">
-                  <a className={styles.account}>
-                    <span>
-                      <button className={styles.call__button}>
-                        Войдите,чтобы купить билеты на <br />
-                        {time}
-                      </button>
-                    </span>
-                  </a>
-                </Link>
+                <div className={styles.account}>
+                  <Button
+                    sx={{
+                      color: primary,
+                      backgroundColor: secondary,
+                      marginRight: 10,
+                      marginTop: 3,
+                      borderRadius: 3,
+                    }}
+                    variant="contained"
+                    size="small"
+                    className={styles.buy__button}
+                  >
+                    <a href="/lk">
+                      Купить билеты на <br /> {time}
+                    </a>
+                  </Button>
+
+                  <Button
+                    sx={{
+                      color: primary,
+                      backgroundColor: secondary,
+                      marginTop: 3,
+                      borderRadius: 3,
+                    }}
+                    variant="contained"
+                    size="small"
+                    className={styles.comment__button}
+                  >
+                    <a href="/comment">
+                      Оставить отзыв
+                      <br />о фильме
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           );
