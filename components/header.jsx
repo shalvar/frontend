@@ -1,12 +1,8 @@
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
-import { useContext } from "react";
-import { UserContext } from "../pages/_app";
-
+import Avatar from "@mui/material/Avatar";
 
 export default function Header({ title }) {
-  const userContext = useContext(UserContext);
-  
 
   return (
     <header>
@@ -33,7 +29,11 @@ export default function Header({ title }) {
         <div className={styles.banner}>
           <h1 className={styles.banner__text}>{title}</h1>
         </div>
-
+        <Avatar
+          alt="Me"
+          src="../img/Me.jpg"
+        
+        />
       </div>
     </header>
   );

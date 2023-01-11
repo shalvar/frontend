@@ -79,20 +79,17 @@ export default function Films() {
                   </Button>
 
                   <Button
+                    variant="contained"
+                    size="small"
                     sx={{
                       color: primary,
                       backgroundColor: secondary,
                       marginTop: 3,
                       borderRadius: 3,
                     }}
-                    variant="contained"
-                    size="small"
                     className={styles.comment__button}
                   >
-                    <a href="/comment">
-                      Оставить отзыв
-                      <br />о фильме
-                    </a>
+                    <a href="/comment">Оставить отзыв о фильме</a>
                   </Button>
                 </div>
               </div>
