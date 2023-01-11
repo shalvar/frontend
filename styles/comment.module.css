@@ -34,3 +34,10 @@ margin-bottom: 10px;
 .comments__button:active {
   box-shadow: none;
 }
+
+@media print{
+  
+  .comments__form {
+    display: none;
+  }
+}

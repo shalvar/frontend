@@ -58,8 +58,12 @@
   margin-top: 1em;
   margin-bottom: 0;
 }
+.buy__button {
+  margin-bottom: 0;
+  margin-left: 30px;
+  border-radius: 1em;
+}
 .comment__button {
-  background: rgb(255, 137, 2);
   padding: 1em;
   margin-bottom: 0;
   margin-left: 30px;
@@ -75,10 +79,18 @@
   .poster {
     flex-direction: column;
   }
+  .date {
+    opacity: 0;
+    height: 0;
+  }
+  .genre {
+    opacity: 0;
+    height: 0;
+  }
   .poster__infoText {
     font-weight: 600;
   }
-  .poster__info{
+  .poster__info {
     width: 0;
   }
   .buy__button {
@@ -105,15 +117,46 @@
   .poster {
     flex-direction: column;
   }
-  .poster__info{
+  .poster__info {
     width: 0;
+  }
+  .buy__button {
+    width: 10em;
+    margin-bottom: 0;
+    margin-left: 30px;
+    border-radius: 1em;
+  }
+  .comment__button {
+    width: 10em;
+    margin-bottom: 0;
+    margin-left: 30px;
+    border-radius: 1em;
+  }
+  .date {
+    opacity: 0;
+    height: 0;
+  }
+  .genre {
+    opacity: 0;
+    height: 0;
   }
   .buy__button {
     margin-top: 0;
   }
-.p{
-  opacity: 0;
-  height: 0;
+  .p {
+    opacity: 0;
+    height: 0;
+  }
 }
-
+@media print {
+  .p {
+    opacity: 1;
+    width: 20em;
+  }
+   .buy__button {
+    opacity: 0;
+  }
+  .comment__button {
+    opacity: 0;
+  }
 }
